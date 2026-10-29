@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+  <!-- triangle key: opens the triangle door. -->
+  <g stroke="#111" stroke-width="3" stroke-linejoin="round">
+    <path d="M22 19H43V25H39V32H34V25H22Z" fill="#f5b301"/>
+    <path d="M13 8L25 33H1Z" fill="#f5b301"/><path d="M13 20L16 27H10Z" fill="#fff" stroke-width="2"/>
+  </g>
+</svg>

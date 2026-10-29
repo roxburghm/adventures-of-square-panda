@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="44" viewBox="0 0 48 44">
+  <!-- Ice boots: no more slipping on ice, and water freezes under your feet! -->
+  <g stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M10 4H28V22L40 27Q45 33 41 40H8Q4 40 4 36V10Q4 4 10 4Z" fill="#8fe0ff"/>
+    <path d="M7 4H31V12H7Z" fill="#fff"/>
+    <path d="M18 19V31M12 25H24M14 21L22 29M22 21L14 29" stroke="#fff" stroke-width="2.2"/>
+  </g>
+</svg>

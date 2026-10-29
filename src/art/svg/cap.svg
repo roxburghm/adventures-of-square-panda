@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="24" viewBox="0 0 72 24">
+  <!-- Grass (or sand, or snow) that sits on top of ground blocks. -->
+  <path d="M0 0H72V12Q66 22 60 12Q54 22 48 12Q42 22 36 12Q30 22 24 12Q18 22 12 12Q6 22 0 12Z" style="fill:var(--cap,#69c44a)"/>
+  <rect width="72" height="7" style="fill:var(--cap2,#8be06a)"/>
+  <path d="M72 12Q66 22 60 12Q54 22 48 12Q42 22 36 12Q30 22 24 12Q18 22 12 12Q6 22 0 12" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+</svg>

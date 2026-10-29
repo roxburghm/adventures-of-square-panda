@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="22" viewBox="0 0 72 22">
+  <!-- Bamboo bridge: you can jump up through it and land on top. -->
+  <g stroke="#111" stroke-width="3" stroke-linejoin="round">
+    <rect x="1.5" y="1.5" width="69" height="16" rx="8" fill="#7ccf4f"/>
+    <path d="M19 1.5V17.5M37 1.5V17.5M55 1.5V17.5" fill="none"/>
+    <path d="M7 6.5H65" stroke="#b6ee8c" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

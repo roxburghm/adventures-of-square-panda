@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="34" viewBox="0 0 38 34">
+  <!-- Heart: gives back one health. -->
+  <path d="M19 31.5C5 21 2 13 2 9C2 4.5 5.8 2 10 2C14 2 17 4.6 19 8C21 4.6 24 2 28 2C32.2 2 36 4.5 36 9C36 13 33 21 19 31.5Z" fill="#ff4d6d" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M8 9Q8 6 11 6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+</svg>

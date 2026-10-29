@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="110" viewBox="0 0 72 110">
+  <!-- The goal flag. Touch it to finish the level! -->
+  <g stroke="#111" stroke-width="3.5" stroke-linejoin="round">
+    <rect x="12" y="10" width="7" height="94" fill="#78c850"/>
+    <path d="M12 40H19M12 70H19" fill="none"/>
+    <path d="M19 12Q42 4 68 14Q56 26 68 40Q42 30 19 40Z" fill="#fff"/>
+    <path d="M20.5 13.5Q30 10 40 10.5V20H32V28H20.5Z" fill="#111" stroke="none"/>
+    <circle cx="15.5" cy="9" r="6" fill="#f5b301"/>
+    <rect x="2" y="100" width="28" height="8" rx="3" fill="#a3a3a3"/>
+  </g>
+</svg>

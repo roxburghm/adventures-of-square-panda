@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="46" viewBox="0 0 62 46">
+  <!-- Falling anvil. It drops when you walk underneath! -->
+  <g stroke="#111" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M3 6H50L59 12C59 20 47 21 41 23V30H49V43H13V30H21V23C14 21 6 18 3 6Z" fill="#59606e"/>
+    <path d="M9 9.5H48" stroke="#9aa3b2" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

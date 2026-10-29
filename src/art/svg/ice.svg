@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <!-- Slippery ice block. -->
+  <rect width="72" height="72" fill="#9fe3fb"/>
+  <rect x="4" y="4" width="64" height="64" rx="7" fill="#d4f6ff"/>
+  <g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M14 30L30 14"/><path d="M14 46L46 14"/></g>
+  <path d="M42 60L60 42" stroke="#7fcbea" stroke-width="3" stroke-linecap="round"/>
+</svg>

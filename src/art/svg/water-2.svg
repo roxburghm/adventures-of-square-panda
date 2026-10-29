@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <!-- Top of the water (frame 2). Sharks live here. Don't fall in! -->
+  <path d="M0 12Q9 20 18 12T36 12T54 12T72 12 V72H0Z" fill="#38a8f0"/>
+  <path d="M0 12Q9 20 18 12T36 12T54 12T72 12" fill="none" stroke="#c9ecff" stroke-width="8" transform="translate(0 4)" opacity=".7"/>
+  <path d="M0 12Q9 20 18 12T36 12T54 12T72 12" fill="none" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <!-- Ground block. Colours come from the level theme (see src/themes.js). -->
+  <rect width="72" height="72" style="fill:var(--dirt,#b97a45)"/>
+  <g style="fill:var(--dirt2,#9d6330)">
+    <circle cx="16" cy="26" r="6"/><circle cx="52" cy="18" r="4"/><circle cx="34" cy="52" r="7"/>
+    <circle cx="62" cy="58" r="4"/><circle cx="10" cy="62" r="3"/>
+  </g>
+  <g stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".3">
+    <path d="M28 30h8"/><path d="M50 40h6"/><path d="M8 44h6"/><path d="M46 66h8"/>
+  </g>
+</svg>

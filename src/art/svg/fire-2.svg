@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <!-- Fire (frame 2). -->
+  <g stroke="#111" stroke-width="3" stroke-linejoin="round">
+    <path d="M7 71C3 54 9 44 15 34C20 40 24 28 25 14C37 26 41 38 37 50C46 42 50 34 52 24C62 38 66 54 63 71Z" fill="#ff7a1a"/>
+    <path d="M19 71C16 61 21 54 27 48C30 54 33 58 34 62C39 56 42 50 44 44C49 54 50 63 48 71Z" fill="#ffd23a"/>
+  </g>
+</svg>

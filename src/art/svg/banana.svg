@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- A thrown banana. Duck! -->
+  <path d="M4 9C6 22 18 29 29 26C29 22 25 22 21 20C14 18 10 14 10 5Z" fill="#ffe14d" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M4 9L3 4L8 3L10 5" fill="#7a5a2a" stroke="#111" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Square Panda Level Designer</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand hand" href="./index.html" title="Back to the game">
+        <img src="./favicon.svg" alt="" width="40" height="44" />
+        <span>Level Designer</span>
+      </a>
+      <label>Name <input id="name" maxlength="40" /></label>
+      <label>By <input id="author" maxlength="30" placeholder="your name" /></label>
+      <label>Theme <select id="theme"></select></label>
+      <label title="Finish faster than this for a time bonus">Par <input id="par" type="number" min="10" max="999" /> s</label>
+      <label class="grow">Hint <input id="hint" maxlength="160" placeholder="a tip shown when the level starts (optional)" /></label>
+      <button id="check" title="A robot tries to finish the level, to see if it can be done">🤖 Can it be done?</button>
+      <button id="test" class="primary hand" title="Play this level (T)">▶ Test play</button>
+    </header>
+
+    <nav class="tools">
+      <div class="group" role="group" aria-label="Tools">
+        <button data-tool="draw" title="Draw (D)">✏️ Draw</button>
+        <button data-tool="rect" title="Rectangle: drag to fill a box (R)">▭ Box</button>
+        <button data-tool="fill" title="Fill an area (F)">🪣 Fill</button>
+        <button data-tool="erase" title="Rub out (E). Right-click also rubs out.">🧽 Rub out</button>
+        <button data-tool="pick" title="Pick up what's under the mouse (I)">💧 Pick</button>
+      </div>
+      <div class="group">
+        <button id="undo" title="Undo (Ctrl+Z)">↶ Undo</button>
+        <button id="redo" title="Redo (Ctrl+Y)">↷ Redo</button>
+      </div>
+      <div class="group">
+        <button id="zoomOut" title="Zoom out (-)">−</button>
+        <span id="zoomLabel" class="readout"></span>
+        <button id="zoomIn" title="Zoom in (+)">+</button>
+        <button id="gridToggle" title="Show grid lines (G)">#</button>
+      </div>
+      <div class="group">
+        <label>Size <input id="width" type="number" /> × <input id="height" type="number" /></label>
+        <button id="resize" title="Change the level size (grows to the right and upwards)">Resize</button>
+      </div>
+      <div class="group right">
+        <button id="new">New</button>
+        <button id="open">Open…</button>
+        <button id="save" title="Save in this browser (Ctrl+S)">Save</button>
+        <button id="download" title="Download the level file to add to the game">Download</button>
+        <button id="import" title="Load a level file">Load file…</button>
+        <input id="importFile" type="file" accept=".json,application/json" hidden />
+      </div>
+    </nav>
+
+    <aside class="palette" id="palette" aria-label="Things to put in the level"></aside>
+
+    <main id="viewport" class="viewport">
+      <div id="sizer"><canvas id="canvas"></canvas></div>
+    </main>
+
+    <footer class="status">
+      <span id="where" class="readout"></span>
+      <span id="info"></span>
+      <span id="problems"></span>
+      <span id="saved" class="readout"></span>
+    </footer>
+
+    <dialog id="openDialog">
+      <form method="dialog">
+        <h2 class="hand">Open a level</h2>
+        <h3>Your levels</h3>
+        <ul id="myList" class="level-list"></ul>
+        <h3>The game's levels <small>(opens a copy you can change)</small></h3>
+        <ul id="builtInList" class="level-list"></ul>
+        <menu><button value="cancel">Close</button></menu>
+      </form>
+    </dialog>
+
+    <dialog id="helpDialog">
+      <form method="dialog">
+        <h2 class="hand">Downloaded!</h2>
+        <p>To make your level part of the game for everyone:</p>
+        <ol>
+          <li>Put the file in the <code>src/levels/</code> folder.</li>
+          <li>Start its name with a number, like <code>07-my-level.json</code>. Levels are played in number order.</li>
+          <li>It turns up in the game straight away (if <code>npm run dev</code> is running).</li>
+        </ol>
+        <menu><button value="ok">Got it</button></menu>
+      </form>
+    </dialog>
+
+    <script type="module" src="/src/editor/main.js"></script>
+  </body>
+</html>

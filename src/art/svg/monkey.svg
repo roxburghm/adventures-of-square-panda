@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="68" viewBox="0 0 80 68">
+  <!-- Circle Monkey (faces right, tail trails behind on the left). -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 52C12 62 9 46 3 55" fill="none" stroke="#111" stroke-width="9"/>
+    <path d="M18 52C12 62 9 46 3 55" fill="none" stroke="#e8971a" stroke-width="4"/>
+    <circle cx="25" cy="14" r="9" fill="#e8971a" stroke="#111" stroke-width="3.5"/>
+    <circle cx="59" cy="14" r="9" fill="#e8971a" stroke="#111" stroke-width="3.5"/>
+    <circle cx="25" cy="15" r="4.5" fill="#ffec00" stroke="#111" stroke-width="2.5"/>
+    <circle cx="59" cy="15" r="4.5" fill="#ffec00" stroke="#111" stroke-width="2.5"/>
+    <circle cx="42" cy="38" r="28" fill="#e8971a" stroke="#111" stroke-width="3.5"/>
+    <circle cx="42" cy="38" r="22.5" fill="#ffec00" stroke="#111" stroke-width="2.5"/>
+    <ellipse cx="34" cy="33" rx="2.8" ry="4" fill="#111"/>
+    <ellipse cx="50" cy="33" rx="2.8" ry="4" fill="#111"/>
+    <path d="M34 44L42 52L50 44" fill="none" stroke="#111" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="80" viewBox="0 0 84 80">
+  <!-- Triangle Shark, mouth open (faces right). -->
+  <g stroke="#111" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M20 6C13 24 14 44 24 56L38 40L36 22Z" fill="#0a8e8e"/>
+    <path d="M42 4L60 37L63.6 44.7L80 76H4Z" fill="#0a8e8e"/>
+    <path d="M45.5 36.5Q52 38.5 60 37L63.6 44.7Q52 44.5 45.5 36.5Z" fill="#fff" stroke-width="2.5"/>
+    <path d="M48 38l2.4 2.6l2.4-2.4l2.4 2.6l2.4-2.6l2 2.4" fill="none" stroke-width="1.8"/>
+    <path d="M51 43.6l2.2-2.6l2.2 2.4l2.2-2.6l2.2 2.6l1.6-2" fill="none" stroke-width="1.8"/>
+    <path d="M45 52Q43 62 36 70M51 54Q49 63 44 69M57 56Q55 63 51 68" fill="none" stroke-width="1.8"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/editor/editor.css"
+        ],
+        "createdAt": "2026-10-29T22:09:37.265Z",
+        "reason": "Claude: L174 is the palette sidebar's 3px ink divider, the same ink rule used on the top bar, toolbar and status bar (the comic-panel style), not a coloured accent on a card"
+      }
+    ]
+  }
+}

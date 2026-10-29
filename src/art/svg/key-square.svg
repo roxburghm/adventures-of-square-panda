@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+  <!-- square key: opens the square door. -->
+  <g stroke="#111" stroke-width="3" stroke-linejoin="round">
+    <path d="M22 19H43V25H39V32H34V25H22Z" fill="#e5484d"/>
+    <rect x="3" y="11" width="21" height="21" rx="2" fill="#e5484d"/><rect x="10.5" y="18.5" width="6" height="6" fill="#fff"/>
+  </g>
+</svg>

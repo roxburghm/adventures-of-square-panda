@@ -1,0 +1,330 @@
+/* The level designer's look: paper, thick ink lines and bright colours, like the comics. */
+
+:root {
+  --ink: #111111;
+  --paper: #fffdf6;
+  --panel: #ffffff;
+  --red: #e5484d;
+  --teal: #0a8e8e;
+  --yellow: #ffe14d;
+  --muted: #6b6b6b;
+  --warn: #b45309;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    'top top'
+    'tools tools'
+    'palette main'
+    'status status';
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.3 system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.hand {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+select {
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: #fff;
+  min-width: 0;
+}
+
+input[type='number'] {
+  width: 4.5em;
+}
+
+button {
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 5px 12px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover {
+  background: #fff7c2;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+button.on {
+  background: var(--yellow);
+}
+
+button.primary {
+  background: var(--red);
+  color: #fff;
+  font-size: 18px;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- top bar ---- */
+.top {
+  grid-area: top;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  padding: 10px 16px;
+  border-bottom: 4px solid var(--ink);
+  background: #bfe9ff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.top .grow {
+  flex: 1 1 260px;
+}
+
+.top .grow input {
+  flex: 1;
+}
+
+#name {
+  width: 14em;
+}
+
+#author {
+  width: 8em;
+}
+
+/* ---- tool bar ---- */
+.tools {
+  grid-area: tools;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 3px solid var(--ink);
+}
+
+.group {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.group.right {
+  margin-left: auto;
+}
+
+.readout {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  min-width: 3.5em;
+  text-align: center;
+}
+
+/* ---- palette ---- */
+.palette {
+  grid-area: palette;
+  overflow-y: auto;
+  border-right: 3px solid var(--ink);
+  padding: 8px 10px 20px;
+}
+
+.palette h4 {
+  margin: 14px 4px 6px;
+  font: 18px 'Gloria Hallelujah', cursive;
+}
+
+.palette .items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.palette button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+  box-shadow: 2px 2px 0 var(--ink);
+  border-width: 2px;
+  font-size: 12px;
+  white-space: normal;
+  line-height: 1.1;
+}
+
+.palette button.on {
+  background: var(--yellow);
+  border-color: var(--red);
+  box-shadow: 2px 2px 0 var(--red);
+}
+
+.palette canvas {
+  width: 44px;
+  height: 44px;
+}
+
+.palette kbd {
+  font: 11px ui-monospace, monospace;
+  color: var(--muted);
+}
+
+/* ---- the map ---- */
+.viewport {
+  grid-area: main;
+  position: relative;
+  overflow: auto;
+  background: #e9e4d8;
+  min-height: 0;
+}
+
+#canvas {
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: block;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+/* The sizer is as big as the whole level so the scroll bars are right;
+   the canvas stays stuck to the visible part and draws whatever is there. */
+#sizer {
+  position: relative;
+}
+
+/* ---- status bar ---- */
+.status {
+  grid-area: status;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 8px 16px;
+  border-top: 3px solid var(--ink);
+  background: #fff;
+  min-height: 42px;
+}
+
+#info {
+  flex: 1;
+  color: var(--muted);
+}
+
+#problems .error {
+  color: var(--red);
+  font-weight: 600;
+}
+
+#problems .warning {
+  color: var(--warn);
+}
+
+#problems .ok {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ---- dialogs ---- */
+dialog {
+  border: 4px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--ink);
+  background: var(--paper);
+  max-width: min(640px, 92vw);
+  padding: 8px 24px 16px;
+}
+
+dialog::backdrop {
+  background: rgb(17 17 17 / 0.45);
+}
+
+dialog h2 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+dialog menu {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.level-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.level-list li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 2px dashed #d8d2c2;
+}
+
+.level-list li span {
+  flex: 1;
+}
+
+.level-list .empty {
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 170px 1fr;
+  }
+  .palette .items {
+    grid-template-columns: 1fr;
+  }
+}
