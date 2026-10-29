@@ -55,20 +55,21 @@ export class Controls {
   }
 
   addTouchButtons() {
+    // See-through, so you can still see the panda when it walks behind a button.
     const make = (x, y, label, action) => {
-      const circle = this.scene.add.circle(x, y, 95, 0xffffff, 0.35).setStrokeStyle(6, INK, 0.6);
+      const circle = this.scene.add.circle(x, y, 85, 0xffffff, 0.22).setStrokeStyle(6, INK, 0.45);
       const text = this.scene.add
-        .text(x, y, label, { fontFamily: FONT, fontSize: '80px', color: '#111111' })
+        .text(x, y, label, { fontFamily: FONT, fontSize: '72px', color: '#111111' })
         .setOrigin(0.5)
-        .setAlpha(0.7);
+        .setAlpha(0.55);
       for (const o of [circle, text]) o.setScrollFactor(0).setDepth(DEPTH.hud);
-      this.buttons.push({ x, y, r: 115, action, circle });
+      this.buttons.push({ x, y, r: 120, action, circle }); // r: you can press a bit outside the circle
     };
-    const y = GAME_H - 150;
-    make(170, y, '◀', 'left');
-    make(400, y, '▶', 'right');
-    make(GAME_W - 400, y, '▼', 'down');
-    make(GAME_W - 170, y, '▲', 'jump');
+    const y = GAME_H - 125;
+    make(150, y, '◀', 'left');
+    make(370, y, '▶', 'right');
+    make(GAME_W - 370, y, '▼', 'down');
+    make(GAME_W - 150, y, '▲', 'jump');
   }
 
   readTouch() {
@@ -80,7 +81,7 @@ export class Controls {
         if (Math.hypot(p.x - b.x, p.y - b.y) < b.r) state[b.action] = true;
       }
     }
-    for (const b of this.buttons) b.circle.setFillStyle(0xffffff, state[b.action] ? 0.7 : 0.35);
+    for (const b of this.buttons) b.circle.setFillStyle(0xffffff, state[b.action] ? 0.55 : 0.22);
     return state;
   }
 }

@@ -26,6 +26,14 @@ function audio() {
   return ctx;
 }
 
+// Phones (iPhones especially) keep a web page silent until you touch it,
+// so switch the sound on during the very first tap or key press.
+if (typeof window !== 'undefined') {
+  for (const type of ['pointerdown', 'touchend', 'keydown']) {
+    window.addEventListener(type, () => !muted && audio(), { once: true, passive: true });
+  }
+}
+
 function tone(wave, from, to, seconds, volume = 0.2, delay = 0) {
   const a = audio();
   if (!a) return;

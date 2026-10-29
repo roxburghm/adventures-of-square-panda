@@ -10,6 +10,7 @@ import { bestScore, levelBoard } from '../systems/scores.js';
 import { getTheme } from '../themes.js';
 import { createBackdrop } from '../game/backdrop.js';
 import { sfx } from '../systems/sfx.js';
+import { isPhone } from '../systems/device.js';
 import { text, goTo, onKeyDown } from './ui.js';
 
 const COLS = 3;
@@ -35,8 +36,11 @@ export class LevelSelectScene extends Phaser.Scene {
     this.cards = [
       ...BUILT_IN_LEVELS.map((level, i) => ({ title: `${i + 1}. ${level.name}`, sub: getTheme(level.theme).name, level, action: () => play(level) })),
       ...listMyLevels().map((level) => ({ title: level.name, sub: `Made by ${level.author || 'you'}`, level, mine: true, action: () => play(level) })),
-      { title: '+ Make a new level', sub: 'Opens the level designer', action: () => (window.location.href = './editor.html?new=1') },
     ];
+    // No level designer on phones: the screen is too small to draw levels on.
+    if (!isPhone()) {
+      this.cards.push({ title: '+ Make a new level', sub: 'Opens the level designer', action: () => (window.location.href = './editor.html?new=1') });
+    }
 
     const left = GAME_W / 2 - (COLS * CARD_W + (COLS - 1) * GAP_X) / 2 + CARD_W / 2;
     let lastHeading = null;

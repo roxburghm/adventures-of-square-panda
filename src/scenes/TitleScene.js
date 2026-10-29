@@ -8,6 +8,7 @@ import { createBackdrop } from '../game/backdrop.js';
 import { artKey } from '../art/index.js';
 import { BUILT_IN_LEVELS } from '../levels/index.js';
 import { sfx } from '../systems/sfx.js';
+import { isPhone } from '../systems/device.js';
 import { text, Menu, goTo } from './ui.js';
 
 const T = TILE;
@@ -47,24 +48,30 @@ export class TitleScene extends Phaser.Scene {
     this.time.addEvent({ delay: 400, loop: true, callback: () => this.shark.setTexture(this.shark.texture.key === 'shark' ? 'shark-closed' : 'shark') });
 
     const soundLabel = () => `Sound: ${sfx.muted ? 'off' : 'on'}`;
-    const menu = new Menu(this, GAME_W / 2, 470, [
+    const items = [
       {
         label: 'Play the adventure',
         action: () => goTo(this, 'Game', { run: { mode: 'campaign', levels: BUILT_IN_LEVELS, index: 0, score: 0, lives: START_LIVES } }),
       },
       { label: 'Choose a level', action: () => goTo(this, 'LevelSelect') },
-      { label: 'Level designer', action: () => (window.location.href = './editor.html') },
+      // The level designer needs a bigger screen than a phone.
+      ...(isPhone() ? [] : [{ label: 'Level designer', action: () => (window.location.href = './editor.html') }]),
       { label: 'High scores', action: () => goTo(this, 'Scores') },
-      {
-        label: soundLabel(),
-        action: () => {
-          sfx.toggle();
-          menu.setLabel(4, soundLabel());
-        },
+    ];
+    const sound = items.length;
+    items.push({
+      label: soundLabel(),
+      action: () => {
+        sfx.toggle();
+        menu.setLabel(sound, soundLabel());
       },
-    ]);
+    });
+    const menu = new Menu(this, GAME_W / 2, 470, items);
 
-    text(this, GAME_W / 2, GAME_H - 72, 'Arrows / WASD to move  ·  Space to jump  ·  Down to duck  ·  Esc to pause', 32, {
+    const help = this.sys.game.device.input.touch
+      ? 'Tap a choice to start  ·  In the game, use the buttons on the screen'
+      : 'Arrows / WASD to move  ·  Space to jump  ·  Down to duck  ·  Esc to pause';
+    text(this, GAME_W / 2, GAME_H - 72, help, 32, {
       color: '#ffffff',
       stroke: '#111111',
       strokeThickness: 8,

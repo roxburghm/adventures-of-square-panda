@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
+    <!-- "Add to Home Screen" on a phone opens the game full screen, without the browser bars. -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Square Panda" />
+    <meta name="theme-color" content="#1c1c1c" />
     <title>Adventures of Square Panda</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <style>
@@ -20,9 +25,49 @@
         width: 100%;
         height: 100%;
       }
+      /* On a phone held upright the game would be tiny, so ask for it to be turned sideways. */
+      #rotate {
+        display: none;
+      }
+      @media (orientation: portrait) and (pointer: coarse) {
+        #rotate {
+          display: flex;
+          position: fixed;
+          inset: 0;
+          z-index: 10;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+          padding: 32px;
+          background: #bfe9ff;
+          color: #111111;
+          font: 30px/1.3 'Gloria Hallelujah', cursive;
+          text-align: center;
+        }
+        #rotate img {
+          width: 120px;
+          height: auto;
+          animation: tilt 1.6s ease-in-out infinite;
+        }
+      }
+      @keyframes tilt {
+        0%,
+        30% {
+          transform: rotate(0deg);
+        }
+        60%,
+        100% {
+          transform: rotate(90deg);
+        }
+      }
     </style>
   </head>
   <body>
+    <div id="rotate">
+      <img src="./favicon.svg" alt="" />
+      <p>Turn your phone sideways to play!</p>
+    </div>
     <div id="game"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

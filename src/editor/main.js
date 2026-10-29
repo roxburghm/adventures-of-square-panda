@@ -21,6 +21,7 @@ import { normalizeLevel, validateLevel, levelToJSON, blankLevel, slugify, MIN_WI
 import { BUILT_IN_LEVELS } from '../levels/index.js';
 import { listMyLevels, saveMyLevel, deleteMyLevel, getMyLevel, saveDraft, loadDraft } from '../systems/myLevels.js';
 import { checkLevel } from '../game/solver.js';
+import { isPhone } from '../systems/device.js';
 
 const $ = (sel) => document.querySelector(sel);
 const ZOOMS = [0.25, 0.35, 0.5, 0.65, 0.8, 1];
@@ -794,7 +795,23 @@ function bindButtons() {
 //  Start up
 // ---------------------------------------------------------------
 
+/** The designer needs a bigger screen than a phone, so explain that instead of showing a squashed editor. */
+function phoneNotice() {
+  const note = document.createElement('div');
+  note.className = 'phone-note';
+  note.innerHTML = `
+    <img src="./favicon.svg" alt="" width="110" height="120" />
+    <h1 class="hand">The level designer needs a bigger screen</h1>
+    <p>Try it on a computer or a tablet. On a phone you can still play every level!</p>
+    <a class="hand" href="./index.html">▶ Play the game</a>`;
+  document.body.append(note);
+}
+
 async function start() {
+  if (isPhone()) {
+    phoneNotice();
+    return;
+  }
   bindMetaInputs();
   bindButtons();
   ed.art = await loadAllArt();
