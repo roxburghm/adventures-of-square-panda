@@ -50,7 +50,7 @@ export class TitleScene extends Phaser.Scene {
     const soundLabel = () => `Sound: ${sfx.muted ? 'off' : 'on'}`;
     const items = [
       {
-        label: 'Play the adventure',
+        label: 'Play the adventure game',
         action: () => goTo(this, 'Game', { run: { mode: 'campaign', levels: BUILT_IN_LEVELS, index: 0, score: 0, lives: START_LIVES } }),
       },
       { label: 'Choose a level', action: () => goTo(this, 'LevelSelect') },
